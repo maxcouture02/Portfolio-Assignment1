@@ -8,7 +8,7 @@ html {
     --dark-bg: #111111;
     --darker-bg: #000000;
     --card-bg: #1a1a1a;
-    --header-bg: #121212;
+    --header-bg: #1e1e1e;
     
     /* Text Colors */
     --text-light: #ffffff;
@@ -72,12 +72,12 @@ body::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('grain-texture2.jpg');
+    background-image: url('grain-texture3.jpg');
     background-size: contain;
-    opacity: 0.25;
-    mix-blend-mode: overlay;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
 }
 
 .name-block-wrapper {
