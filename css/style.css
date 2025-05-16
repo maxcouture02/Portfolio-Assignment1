@@ -1,0 +1,311 @@
+/* Reset and Base */
+html {
+    height: 100%;
+}
+
+:root {
+    /* Colors */
+    --dark-bg: #111111;
+    --darker-bg: #000000;
+    --card-bg: #1a1a1a;
+    --header-bg: #121212;
+    
+    /* Text Colors */
+    --text-light: #ffffff;
+    --text-off-white: #f3f0e6;
+    --text-light-gray: #f0f0f0;
+    --text-muted-light: rgba(255, 255, 255, 0.75);
+    
+    /* Accent Colors */
+    --accent-green: #46ff00;
+    --accent-blue: #007bff;
+    --border-color: #333333;
+    
+    /* Effects */
+    --card-glow: #03b00056;
+    
+    /* Typography */
+    --main-font: 'DM Sans', sans-serif;
+    
+    /* Spacing */
+    --section-spacing: 40px;
+    --card-spacing: 15px;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--darker-bg);
+    color: var(--text-light);
+    font-family: var(--main-font);
+    scroll-behavior: smooth;
+    position: relative;
+    z-index: 0;
+    min-height: 100%;
+}
+
+/* Grain Texture Effect */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('grain-texture.png');
+    background-size: contain;
+    opacity: 0;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Header Styles */
+.name-header {
+    background-color: var(--header-bg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.name-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('grain-texture2.jpg');
+    background-size: contain;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.name-block-wrapper {
+    width: 100%;
+    z-index: 0;
+}
+
+/* Header Typography */
+.name-header h1 {
+    font-size: 10rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+    color: var(--text-off-white);
+}
+
+.name-header .first-name { text-align: left; }
+.name-header .last-name { text-align: right; }
+
+.name-header .name-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--text-light);
+    margin: 1rem 0;
+}
+
+.name-header .title-line {
+    color: var(--accent-green);
+}
+
+.name-header h1.title-line:first-of-type {
+    margin-top: 2rem;
+}
+
+/* Navigation */
+.navbar.navbar-dark {
+    background-color: var(--dark-bg) !important;
+    border-bottom: 2px solid var(--border-color);
+    padding: 0.25rem 0;
+}
+
+.navbar.navbar-dark .navbar-brand {
+    color: var(--text-light) !important;
+    font-weight: 700;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-link {
+    color: var(--text-muted-light) !important;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Navigation Underline Animation */
+.navbar.navbar-dark .navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--text-light);
+    transition: width 0.3s ease;
+    margin-top: 4px;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-link:hover::after,
+.navbar.navbar-dark .navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-link:hover,
+.navbar.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--text-light) !important;
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin-bottom: var(--section-spacing);
+    font-weight: 700;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+    color: var(--text-off-white);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-green);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Split Section Titles */
+.split-section-title-wrapper {
+    margin-bottom: var(--section-spacing);
+}
+
+.split-section-title-wrapper h2 {
+    font-family: var(--main-font);
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--text-off-white);
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+}
+
+.split-section-title-wrapper .split-title-left { text-align: left; }
+.split-section-title-wrapper .split-title-right { text-align: right; }
+
+/* Case Study Cards */
+.case-study-card {
+    background-color: var(--card-bg);
+    padding: var(--card-spacing);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 100%;
+}
+
+.case-study-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--card-glow);
+}
+
+.case-study-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.case-study-card a {
+    text-decoration: none;
+    color: var(--text-light-gray);
+}
+
+.case-study-card a:hover {
+    color: var(--text-light);
+}
+
+.case-study-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg) !important;
+    color: var(--text-muted-light);
+    padding: 2rem 0;
+    border-top: 2px solid var(--accent-green);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: var(--accent-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .name-header h1,
+    .split-section-title-wrapper h2 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .name-header h1,
+    .split-section-title-wrapper h2 {
+        font-size: 2.5rem;
+    }
+    
+    .name-header .first-name,
+    .name-header .last-name {
+        text-align: center;
+    }
+    
+    .name-header h1.title-line:first-of-type {
+        margin-top: 1rem;
+    }
+}
+
+/* Fade In Animation Styles */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in.appear {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Optional: Different animation delays for staggered effects */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+
+.name-block-wrapper h1 {
+    will-change: transform;
+    /* start all at 0 */
+    transform: translateX(0);
+  }
+  
