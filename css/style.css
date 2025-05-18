@@ -15,6 +15,7 @@ html {
     --text-off-white: #f3f0e6;
     --text-light-gray: #f0f0f0;
     --text-muted-light: rgba(255, 255, 255, 0.75);
+    --text-muted-dates: #9e9e9e;
     
     /* Accent Colors */
     --accent-green: #46ff00;
@@ -263,12 +264,7 @@ footer a:hover {
 @media (max-width: 576px) {
     .name-header h1,
     .split-section-title-wrapper h2 {
-        font-size: 2.5rem;
-    }
-    
-    .name-header .first-name,
-    .name-header .last-name {
-        text-align: center;
+        font-size: 2rem; /* Smaller font size for better fit */
     }
     
     .name-header h1.title-line:first-of-type {
@@ -308,4 +304,3 @@ footer a:hover {
     /* start all at 0 */
     transform: translateX(0);
   }
-  
