@@ -1,3 +1,4 @@
+// Appear/fade in animation
 document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -8,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, {
         threshold: 0.1, // Trigger when at least 10% of the element is visible
-        rootMargin: '0px' // Can adjust this to trigger earlier/later
+        rootMargin: '0px'
     });
 
     // Observe all elements with fade-in class
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// scroll-animate.js
+// Translate animation on scroll
 document.addEventListener('DOMContentLoaded', () => {
     const header  = document.querySelector('.name-header');
     const first   = document.querySelector('.first-name');
